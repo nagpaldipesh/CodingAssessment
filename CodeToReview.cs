@@ -5,7 +5,7 @@ using System.Linq;
 namespace Utility.Valocity.ProfileHelper {
 
     //Model should not be part of same namespace.
-    //People is not descriptive. Please rename it to Person. 
+    //People is not descriptive. Please rename it to User. 
     public class People {
         // What do you meant by Under16 here? How it's value should be evaluated?
         private static readonly DateTimeOffset Under16 = DateTimeOffset.UtcNow.AddYears(-15);
@@ -83,6 +83,10 @@ namespace Utility.Valocity.ProfileHelper {
 
         private IEnumerable<People> GetBobs(bool olderThan30) {
 
+            // new TimeSpan(30 * 356, 0, 0, 0))
+            // If I am not wrong, you might want to get 30 Years back Date. If Yes, Why you have used 356? 
+            //  And it can be replace by below code:
+            //  DateTime.UtcNow.AddYears(-30)
             return olderThan30 ? _people.Where(x => x.Name == "Bob" && x.DOB >= DateTime.Now.Subtract(new TimeSpan(30 * 356, 0, 0, 0))) : _people.Where(x => x.Name == "Bob");
         }
 
