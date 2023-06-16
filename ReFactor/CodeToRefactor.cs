@@ -25,9 +25,8 @@ namespace CodingAssessment.Refactor {
                 try {
                     // Creates a random Name
                     string name = string.Empty;
-                    var randomNumber = new Random().Next(0, 1);
 
-                    name = randomNumber == 0 ? AppConstants.Bob : AppConstants.Betty;
+                    name = AppConstants.Bob;
 
                     // Adds new people to the list
                     _users.Add(GetUserByName(name));
@@ -40,21 +39,22 @@ namespace CodingAssessment.Refactor {
             return _users;
         }
 
-        public string GetUserName(User p, string lastName) {
+        public string GetUserName(User user, string lastName) {
             if (lastName.Contains("test"))
-                return p.Name;
+                return user.Name;
 
-            var userName = p.Name + " " + lastName;
+            var userName = user.Name + " " + lastName;
             if (userName.Length > 255) {
-                userName.Substring(0, 255);
+                return userName.Substring(0, 255);
             }
 
             return userName;
         }
 
-        private IEnumerable<User> GetUsersByName(string name, bool isUserOlderThanThirty) {
+        public IEnumerable<User> GetUsersByName(string name, bool isUserOlderThanThirty) {
             if (isUserOlderThanThirty) {
-                DateTime thirtyYearsAgo = DateTime.UtcNow.AddYears(-30);
+                //DateTime thirtyYearsAgo = DateTime.UtcNow.AddYears(-30);
+                DateTime thirtyYearsAgo = DateTime.Now.Subtract(new TimeSpan(30 * 356));
                 return _users.Where(x => x.Name == name && x.DOB >= thirtyYearsAgo);
             }
 
@@ -63,7 +63,8 @@ namespace CodingAssessment.Refactor {
 
         private User GetUserByName(string name) {
             var randomNumber = new Random().Next(18, 85);
-            return new User(name, DateTime.UtcNow.AddYears(randomNumber * -1));
+            //return new User(name, DateTime.UtcNow.AddYears(randomNumber * -1));
+            return new User(name, DateTime.Now.Subtract(new TimeSpan(randomNumber * 356)));
         }
     }
 }

@@ -51,6 +51,7 @@ namespace Utility.Valocity.ProfileHelper {
                     var random = new Random();
 
                     // Convert if else into ternary statement for more redability
+                    //It will always be zero since 1 < random number >=0 
                     if (random.Next(0, 1) == 0) {
                         // Create constant class and move these constant values there. So, it can be used across multiple places
                         name = "Bob";
@@ -81,6 +82,7 @@ namespace Utility.Valocity.ProfileHelper {
         //    return isOlderThanThirty ? _people.Where(x => x.Name == name && x.DOB >= DateTime.Now.Subtract(new TimeSpan(30 * 356, 0, 0, 0))) : _people.Where(x => x.Name == name);
         //}
 
+        //Why this method is declared? I can not see any reference. Moreover, it is private
         private IEnumerable<People> GetBobs(bool olderThan30) {
 
             // new TimeSpan(30 * 356, 0, 0, 0))
@@ -102,6 +104,7 @@ namespace Utility.Valocity.ProfileHelper {
             // Is above behavior is correct?
 
             if ((p.Name.Length + lastName).Length > 255) {
+                //string is immutable changes will not reflect any where
                 (p.Name + " " + lastName).Substring(0, 255);
             }
 
