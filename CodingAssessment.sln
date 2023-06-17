@@ -15,6 +15,42 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CardApp", "CardApp", "{C71D9E3F-3585-41D8-9B14-84BE18ADEC53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{8F3C12E4-25F3-4182-A4A5-E9466B0B9AAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{ADBD671D-EF9C-4D93-A9C3-E5CFB9BC2BE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dev", "Dev", "{FCFD5AC5-85B4-49F8-9901-5D644D8BE6C9}"
+	ProjectSection(SolutionItems) = preProject
+		CardApp\WebApp\Deployement\Dev\appsettings.json = CardApp\WebApp\Deployement\Dev\appsettings.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QA", "QA", "{7ABD7222-3267-4E47-977A-E8A2068C1A6F}"
+	ProjectSection(SolutionItems) = preProject
+		CardApp\WebApp\Deployement\QA\appsettings.json = CardApp\WebApp\Deployement\QA\appsettings.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apps.CardGame.Services", "CardApp\Apps.CardGame.Services\Apps.CardGame.Services.csproj", "{242CDA12-B323-4161-8774-41B9B3776FAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apps.CardGame.Domain", "CardApp\Apps.CardGame.Domain\Apps.CardGame.Domain.csproj", "{ED216B31-B7E6-418D-A97D-5F09DB4B529C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apps.CardGame.WebApp", "CardApp\WebApp\Apps.CardGame.WebApp\Apps.CardGame.WebApp.csproj", "{C3D2C0CD-37DC-41A6-A3BF-A33BFA39514F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Perf", "Perf", "{20EE6617-1410-4B32-A9BB-56586C62946E}"
+	ProjectSection(SolutionItems) = preProject
+		CardApp\WebApp\Deployement\Perf\appsettings.json = CardApp\WebApp\Deployement\Perf\appsettings.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prod", "Prod", "{147B8ABD-C384-47C5-A369-0F9916FB1A2F}"
+	ProjectSection(SolutionItems) = preProject
+		CardApp\WebApp\Deployement\Prod\appsettings.json = CardApp\WebApp\Deployement\Prod\appsettings.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apps.CardGame.Services.UnitTests", "Apps.CardGame.Services.UnitTests\Apps.CardGame.Services.UnitTests.csproj", "{AE0DEEB3-0152-4F93-9FE0-611993C65128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apps.CardGame.WebApp.UnitTests", "Apps.CardGame.WebApp.UnitTests\Apps.CardGame.WebApp.UnitTests.csproj", "{2193A13E-8477-4A79-A259-96D9DFAF6C1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,9 +65,42 @@ Global
 		{3737666C-6FB0-4DFC-8D96-A518AAF245EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3737666C-6FB0-4DFC-8D96-A518AAF245EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3737666C-6FB0-4DFC-8D96-A518AAF245EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{242CDA12-B323-4161-8774-41B9B3776FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{242CDA12-B323-4161-8774-41B9B3776FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{242CDA12-B323-4161-8774-41B9B3776FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{242CDA12-B323-4161-8774-41B9B3776FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED216B31-B7E6-418D-A97D-5F09DB4B529C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED216B31-B7E6-418D-A97D-5F09DB4B529C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED216B31-B7E6-418D-A97D-5F09DB4B529C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED216B31-B7E6-418D-A97D-5F09DB4B529C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D2C0CD-37DC-41A6-A3BF-A33BFA39514F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D2C0CD-37DC-41A6-A3BF-A33BFA39514F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D2C0CD-37DC-41A6-A3BF-A33BFA39514F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D2C0CD-37DC-41A6-A3BF-A33BFA39514F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE0DEEB3-0152-4F93-9FE0-611993C65128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE0DEEB3-0152-4F93-9FE0-611993C65128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE0DEEB3-0152-4F93-9FE0-611993C65128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE0DEEB3-0152-4F93-9FE0-611993C65128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2193A13E-8477-4A79-A259-96D9DFAF6C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2193A13E-8477-4A79-A259-96D9DFAF6C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2193A13E-8477-4A79-A259-96D9DFAF6C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2193A13E-8477-4A79-A259-96D9DFAF6C1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F3C12E4-25F3-4182-A4A5-E9466B0B9AAA} = {C71D9E3F-3585-41D8-9B14-84BE18ADEC53}
+		{ADBD671D-EF9C-4D93-A9C3-E5CFB9BC2BE2} = {8F3C12E4-25F3-4182-A4A5-E9466B0B9AAA}
+		{FCFD5AC5-85B4-49F8-9901-5D644D8BE6C9} = {ADBD671D-EF9C-4D93-A9C3-E5CFB9BC2BE2}
+		{7ABD7222-3267-4E47-977A-E8A2068C1A6F} = {ADBD671D-EF9C-4D93-A9C3-E5CFB9BC2BE2}
+		{242CDA12-B323-4161-8774-41B9B3776FAC} = {C71D9E3F-3585-41D8-9B14-84BE18ADEC53}
+		{ED216B31-B7E6-418D-A97D-5F09DB4B529C} = {C71D9E3F-3585-41D8-9B14-84BE18ADEC53}
+		{C3D2C0CD-37DC-41A6-A3BF-A33BFA39514F} = {8F3C12E4-25F3-4182-A4A5-E9466B0B9AAA}
+		{20EE6617-1410-4B32-A9BB-56586C62946E} = {ADBD671D-EF9C-4D93-A9C3-E5CFB9BC2BE2}
+		{147B8ABD-C384-47C5-A369-0F9916FB1A2F} = {ADBD671D-EF9C-4D93-A9C3-E5CFB9BC2BE2}
+		{AE0DEEB3-0152-4F93-9FE0-611993C65128} = {C71D9E3F-3585-41D8-9B14-84BE18ADEC53}
+		{2193A13E-8477-4A79-A259-96D9DFAF6C1A} = {8F3C12E4-25F3-4182-A4A5-E9466B0B9AAA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C2116AA9-AF5F-4EBF-A96B-4858E89954B2}
