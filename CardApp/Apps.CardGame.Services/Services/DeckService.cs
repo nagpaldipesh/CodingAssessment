@@ -25,13 +25,22 @@ namespace Apps.CardGame.Services.Services {
         private void SetupDeck() {
             var cardSuits = Enum.GetNames<CardSuit>();
             if (cardSuits == null)
-                throw new NullReferenceException(nameof(cardSuits));
+                throw new NullReferenceException(nameof(CardSuit));
 
             foreach (var cardSuit in cardSuits) {
-                var cardTypes = Enum.GetNames<CardType>();
-                foreach (var cardType in cardTypes) {
-                    allCards.Add(_cardService.GetCard(cardType, cardSuit));
-                }
+                Enum.TryParse<CardSuit>(cardSuit, out var suit);
+                AddCard(suit);
+            }
+        }
+
+        private void AddCard(CardSuit suit) {
+            var cardTypes = Enum.GetNames<CardType>();
+            if (cardTypes == null)
+                throw new NullReferenceException(nameof(CardType));
+
+            foreach (var cardType in cardTypes) {
+                Enum.TryParse<CardType>(cardType, out var type);
+                allCards.Add(_cardService.GetCard(type, suit));
             }
         }
 

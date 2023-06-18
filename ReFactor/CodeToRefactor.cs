@@ -54,7 +54,7 @@ namespace CodingAssessment.Refactor {
         public IEnumerable<User> GetUsersByName(string name, bool isUserOlderThanThirty) {
             if (isUserOlderThanThirty) {
                 //DateTime thirtyYearsAgo = DateTime.UtcNow.AddYears(-30);
-                DateTime thirtyYearsAgo = DateTime.Now.Subtract(new TimeSpan(30 * 356));
+                DateTime thirtyYearsAgo = GetDateTime(30);
                 return _users.Where(x => x.Name == name && x.DOB >= thirtyYearsAgo);
             }
 
@@ -64,7 +64,11 @@ namespace CodingAssessment.Refactor {
         private User GetUserByName(string name) {
             var randomNumber = new Random().Next(18, 85);
             //return new User(name, DateTime.UtcNow.AddYears(randomNumber * -1));
-            return new User(name, DateTime.Now.Subtract(new TimeSpan(randomNumber * 356)));
+            return new User(name, GetDateTime(randomNumber));
+        }
+
+        private DateTime GetDateTime(int number) {
+            return DateTime.Now.Subtract(new TimeSpan(number * 356));
         }
     }
 }
